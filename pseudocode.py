@@ -1,4 +1,4 @@
- Course: CS 30
+# Course: CS 30
 # Period: 1
 # Date create: 19/10/01
 # Date last modified: 19/10/02
@@ -7,36 +7,21 @@
 
 
 # print a statement to welcome player
-print('Here is a place that you begin your adventure. Enjoy your time.')
 
 
 # input the player name
-playerName = input("Enter name")
 
 
 # a selection before player enter the game
-if choice == "Begin":
-    print("Welcome to Final Tempo")
-elif choice == "Imformation":
-    print("...")
-else:
-    print("Closed")
 
 
 # print the rules
 
 
-
 # choice a character from 3 character
-if character == "1":
-    print("Your ability is...")
-elif character == "2":
-    print("Your ability is...")
-else:
-    print("Your ability is...")
+
 
 # character appear in a random room (empty room)
-
 
 
 # get three choices of common Weapon
@@ -78,24 +63,12 @@ else:
 
 
 # find a random weapon from chest
-import random
-Weapon = ['1', '2']
-print("You found a weapon in a chest.",
-      f"You get a common weapon {random.choice(Weapon)}!")
 
 
 # find a random consumble from chest
 
 
 # clues about the boos room's passward
-if room == "1":
-    print("The passward is 2_ _ _")
-elif room == "2":
-    print("There is not any clue in this room")
-elif room == "3":
-    print("The passward is _ _ 3 _")
-else:
-    print("The passward is _ 5 _ _")
 
 
 # make a lock on the door to escape(two way to open the door)
@@ -112,3 +85,6 @@ else:
 
 
 # door was open, you success to escape and end the game
+
+
+# print a statement to congratulate the player that they finished the game

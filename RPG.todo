@@ -1,14 +1,14 @@
 Tasks:
     ✔ create README file @done(2019-10-06 23:37) @project(Tasks)
-    ☐ create changelog
-    ☐ create main game file
+    ✔ create changelog @done(2019-10-07 08:45) @project(Tasks)
+    ✔ create main game file @done(2019-10-07 08:45) @project(Tasks)
     ✔ upload files to GitHub @done(2019-10-06 23:37) @project(Tasks)
 
 Game:
     ✔ Think of a name for the Game @done(2019-10-06 23:37) @project(Game)
     ☐ Finish the psedocode
     ☐ Finish the README file
-    ☐ Make a story for the game
+    ☐ Write a story for the game
 
 Classes:
     ☐ Inventory

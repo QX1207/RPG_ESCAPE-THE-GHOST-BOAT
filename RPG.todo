@@ -6,9 +6,9 @@ Tasks:
 
 Game:
     ✔ Think of a name for the Game @done(2019-10-06 23:37) @project(Game)
-    ☐ Finish the psedocode
-    ☐ Finish the README file
-    ☐ Write a story for the game
+    ✔ Finish the psedocode @done(2019-10-07 09:03) @project(Game)
+    ✔ Finish the README file @done(2019-10-07 09:04) @project(Game)
+    ☐ Write a story for the game (have more detail)
 
 Classes:
     ☐ Inventory

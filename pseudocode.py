@@ -27,8 +27,9 @@
 # - There are level c, b monsters in normal rooms. You will get common weapon,
 # rare weapon, and consumble
 # empty room might have chest with rare weapon, epic weapon, and consumble
-# - There are 2 level 2 bosses in special rooms. One with special key.
-# The other with legendary weapon.
+# - There are a level 2 bosses in 2 differemt special rooms.
+# One with epicWapon. The other with legendary weapon.
+# Special key was protected in the level S boss's room
 # (Coming soon...)
 
 
@@ -57,31 +58,45 @@
 # show your inventory and weapon bonus
 
 
-# design a map for my whole game
+# design a map with rooms' name for my whole game
 #                       North
-#                |          |        |S level BOSS|
+#                |          |        |            |
 #       Start    |          |        |            |
 #                |          |        |            |
 #                |          |        |   Escape   |
-#                       South                      
+#                       South
 
 # design a map for chests
-
+#                       North
+#                |          |        |   S Chest  |
+#                |          |        |            |
+#                |          |        |            |
+#                |          |        |            |
+#                       South
 
 # design a map for monsters and bosses
+#                       North
+#                |          |        |S level BOSS|
+#                |          |        |            |
+#                |          |        |            |
+#                |          |        |            |
+#                       South
+
+# 4 directions to go to other room
 
 
-# 4 choices to go to other room
-
-
-# find a monster or boss
+# find a new room
+# print the room's name
 
 
 # show your HP and monster(boss)'s HP
 
 
-# 4 choice to decide your reaction, a choice to use your weapon, a choice
-# to use your character ability, and a choice to use your consumble
+# 7 choice to decide your reaction, attack(make damage to the boss),
+# dodge(dodge the boss's attack and make a few damage to the boss, maybe fail),
+# defense(defense a part a damage from the boss), run back(),
+# a choice to use your weapon, a choice to use your character ability
+#(only doctor yet), and a choice to use your consumble
 
 
 # if the character die, it will have two choice 1. 'encourge you and end

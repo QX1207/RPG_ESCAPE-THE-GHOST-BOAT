@@ -27,8 +27,8 @@
 # - There are level c, b monsters in normal rooms. You will get common weapon,
 # rare weapon, and consumble
 # empty room might have chest with rare weapon, epic weapon, and consumble
-# - There are a level 2 bosses in 2 differemt special rooms.
-# One with epicWapon. The other with legendary weapon.
+# - There are a level a bosses in 2 differemt special rooms.
+# One with epic wapon's chesst. The other with legendary weapon's chest.
 # Special key was protected in the level S boss's room
 # (Coming soon...)
 
@@ -55,18 +55,20 @@
 # get three choices of common Weapon
 
 
-# show your inventory and weapon bonus
+# show your inventory and weapons' usage
 
 
 # design a map with rooms' name for my whole game
+# (The map is relate to my story. It will be complate after.)
 #                       North
 #                |          |        |            |
-#       Start    |          |        |            |
+#       Start #1 |          |        |            |
 #                |          |        |            |
 #                |          |        |   Escape   |
 #                       South
 
 # design a map for chests
+# (The map is relate to my story. It will be complate after.)
 #                       North
 #                |          |        |   S Chest  |
 #                |          |        |            |
@@ -75,6 +77,7 @@
 #                       South
 
 # design a map for monsters and bosses
+# (The map is relate to my story. It will be complate after.)
 #                       North
 #                |          |        |S level BOSS|
 #                |          |        |            |
@@ -99,20 +102,24 @@
 #(only doctor yet), and a choice to use your consumble
 
 
-# if the character die, it will have two choice 1. 'encourge you and end
-# the game' or 2. 'refresh and fight with the monster in that rooom again'
+# if the character die, it will have two choice 1. 'print "you died" and end
+# the game' or 2. 'back to the last room and fight with the monster in
+# that rooom again'
 
 
-# kill the monster or boss, you will get a passward or the special key
+# kill the monster or boss, you can get a single passward number from 4 level
+# b bosses' room. you also can use the chaos mirror to kill the level s boss
+# . then, you will get a special key that help you open the door without
+# passsward
 
 
-# find a chest and open it
+# find a chest and open it after you beat a boss
 
 
 # find a random weapon from chest
 
 
-# find a random consumble from chest
+# find a random consumble from chest (maybe not)
 
 
 # you will get clues about the escape room's passward after you open the chest

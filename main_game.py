@@ -33,7 +33,7 @@ characters = {
         'lastName': 'Collins',
         'ability': 'Skilled - before you enter a new rooom, you can change',
         'a random weapon',
-        }
+        }, 
 
 }
 

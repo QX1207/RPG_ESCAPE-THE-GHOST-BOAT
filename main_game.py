@@ -4,6 +4,8 @@
 
 
 # create a nested dictionary (a dictionary in a dictionary) for the characters
+# number of character is use to count the # of character we have and help us
+# to create other code easier
 characters = {
     'Doctor': {
         'number': '#1',

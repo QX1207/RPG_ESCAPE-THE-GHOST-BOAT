@@ -37,7 +37,7 @@ for characterAction in characterActions:
     print(f"{characterActions.index(characterAction) + 1}, {characterAction}")
 # create a user input
 actions = int(input("You choose to "))
-# use if-elif-else statement tp explain different acton from you character
+# use if-elif-else statement to explain different action from you character
 if actions == 1:
     print("You make damage to the boss.")
 elif actions == 2:

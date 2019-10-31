@@ -27,7 +27,7 @@ else:
 # (only doctor yet), and a choice to use your consumble
 # print a multiple choise question about the action
 print("Choose the following action to beat the boss",
-      "(please select the number): ")
+      "(please enter the number): ")
 # create a list about the character's actions when you meet a bosses
 characterActions = ['attack', 'dodge', 'defense', 'run back',
                     'use your ability', 'use your weapon',

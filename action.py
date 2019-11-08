@@ -1,5 +1,6 @@
-## imnport random
+# imnport random
 import random
+# create a definition of the function
 def directions(selections):
 # print all directions what can player choose
     print("1. North")
@@ -8,9 +9,10 @@ def directions(selections):
     print("4. West")
 # print out a statement that introduce the choices they face
 print("Go in one of the direction above (please enter the number):")
-# create a user input
+# use while loop to repeat the question
 while True:
     directions(selections)
+# create a user input
     selections = int(input("Enter choice: "))
 # use if-elif-else statement to explain different movements
     if selections == 1:
@@ -42,10 +44,13 @@ print("Choose the following action to beat the boss",
 characterActions = ['attack', 'dodge', 'defense', 'run back',
                     'use your ability', 'use your weapon',
                     'use your consumble']
+# create a definition of the function
 def behavior(characterActions):
 # use for loop to print my selections
     for characterAction in characterActions:
-        print(f"{characterActions.index(characterAction) + 1}. {characterAction}")
+        print(f"{characterActions.index(characterAction) + 1}.
+                {characterAction}")
+# after for loop, use while loop to repeat the question until it is break
 while True:
     behavior(characterActions)
     # create a user input

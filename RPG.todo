@@ -12,6 +12,6 @@ Game:
 
 Classes:
     ☐ Inventory
-    ☐ Character
+    ✔ Character @done(2019-10-23 09:17) @project(Classes)
     ☐ Maps
     ☐ Enemies

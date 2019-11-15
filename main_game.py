@@ -1,7 +1,10 @@
-# Basic information about updated #1 in the mian_game.py
+# Updated #1 about basic information (characters...) in the mian_game.py
 # Edited person: Qian Xiang
 # Last updated date: 10/25/2019
 
+
+# imnport random
+import random
 
 # create a nested dictionary (a dictionary in a dictionary) for the characters
 characters = {
@@ -115,12 +118,19 @@ for name, currentlocations_info in currentLocations.items():
           f" a {l2} in this area")
 
 
-# imnport random
-import random
+# print two empty line that make it easy to read
+print("\n")
+
+
 # print out a statement about the story
 print("There are some monsters on the ship. Let us begin the adventure.")
 # create a llist about the directions
 playerDirections = ["North", "East", "South", "West(quit)"]
+
+
+# Updated #2 about the definitions of function in the mian_game.py
+# Edited person: Qian Xiang
+# Last updated date: 11/7/2019
 
 
 # create a definition of the function

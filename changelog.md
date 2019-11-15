@@ -2,10 +2,16 @@
 
 ## Prelease Version
 v1.0
-- Updated the Characters' information
-- Updated the map in draft: Ghost Ship - SV Mary Celeste
-- Updated the inventory system
+
+- created three dictionaries about characters, weapon inventory, and locations
+- created a file weapon.py that include weapons' name
+- fixed error in the RPG.todo
+
 v1.1
-- Updated the player input system
-- Updated the fighting system
-- Updated the player movements
+- created a user input about direction that player can control the character's action
+- created a fighting system that player can battle with bosses
+- added a break order in some selections
+
+v1.2
+- added two definitions of function about directions and character's actions
+- updated the introduction text before each question

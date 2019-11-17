@@ -2,6 +2,7 @@
 
 ## Prelease Version
 v1.0
+
 - created three dictionaries about characters, weapon inventory, and locations
 - created a file weapon.py that include weapons' name
 - fixed error in the RPG.todo

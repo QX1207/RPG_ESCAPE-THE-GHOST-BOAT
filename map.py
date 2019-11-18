@@ -7,7 +7,8 @@ import random
 from tabulate import tabulate
 
 
-currentLocations = {
+# create a dictionary abou my rooms
+rooms = {
     'room #1': {'l1': 'Wheelhouse', 'l2': 'Level C Boss'},
     'room #2': {'l1': 'Accommodators', 'l2': 'Level C Boss'},
     'room #3': {'l1': 'Mess Area', 'l2': 'Level B Boss'},
@@ -31,10 +32,10 @@ def print_map():
         """Print a map of the ship with directions"""
         ship_printable = """
                             North
-                |          |Supplies|            |
-        port    |          |        |You are Here|  starboard
-                |          | Start  |            |
-                |Escape Pod|        |            |
+                |          |        |            |
+                |          |        |            |  
+                |          |        |            |
+                |          |        |            |
                         South
         """
         print(ship_printable)

@@ -7,7 +7,7 @@ import random
 from tabulate import tabulate
 
 
-# create a dictionary abou my rooms
+# create a dictionary about my rooms
 rooms = {
     'room #1': {'l1': 'Wheelhouse', 'l2': 'Level C Boss'},
     'room #2': {'l1': 'Accommodators', 'l2': 'Level C Boss'},
@@ -27,6 +27,9 @@ rooms = {
     'room #16': {'l1': 'Preparation room', 'l2': 'Level A Boss'},
 }
 
+
+# create a nested list about my map
+map = []
 
 def print_map():
         """Print a map of the ship with directions"""

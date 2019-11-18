@@ -15,3 +15,5 @@ v1.1
 v1.2
 - added two definitions of function about directions and character's actions
 - updated the introduction text before each question
+v1.3
+- updated the map in the game

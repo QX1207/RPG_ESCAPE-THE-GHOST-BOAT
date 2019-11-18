@@ -33,7 +33,7 @@ def print_map():
         ship_printable = """
                             North
                 |          |        |            |
-                |          |        |            |  
+                |          |        |            |
                 |          |        |            |
                 |          |        |            |
                         South

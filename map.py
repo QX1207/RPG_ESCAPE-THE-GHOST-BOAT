@@ -27,6 +27,9 @@ currentLocations = {
 }
 
 
+# create a nested list about my map
+map = []
+
 def print_map():
         """Print a map of the ghost ship with directions"""
         ship_printable = """

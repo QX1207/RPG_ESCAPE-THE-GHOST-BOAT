@@ -26,7 +26,7 @@ def main_map():
 # definite the print_map and print it for player
 def print_map():
         """Print a map of the ghost ship with directions"""
-        ship_printable = """
+        print_map = """
                                 North
     |Officer's Quarters|Navgation   |First Mate's Quarters|Captain's Quarters|
     | Fore Castle Deck |Long Boat   |      Main-Mast      |       Wheel      |
@@ -35,3 +35,7 @@ def print_map():
                                 South
         """
         print(print_map)
+
+
+main_map()
+print_map()

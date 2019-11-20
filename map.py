@@ -7,18 +7,26 @@ import random
 from tabulate import tabulate
 
 
-maps = ["Officer's Quarters", "Navgation", "First Mate's Quarters",
-        "Captain's Quarters", "Fore Castle Deck",
-        "Long Boat (Escape gate)", "Main-Mast", "Wheel",
-        "Fore Hold", "Cargo Access", "Capstan", "Officer's Mess",
-        "Live stock Hold", "Infirmary", "Cable Stores",
-        "Carpenter Stores"]
+# create a list about area in my game
+rooms = ["Officer's Quarters", "Navgation", "First Mate's Quarters",
+         "Captain's Quarters", "Fore Castle Deck",
+         "Long Boat (Escape gate)", "Main-Mast", "Wheel",
+         "Fore Hold", "Cargo Access", "Capstan", "Officer's Mess",
+         "Live stock Hold", "Infirmary", "Cable Stores",
+         "Carpenter Stores"]
 
 
-def mian_map():
+# definite the main_map in my game
+def main_map():
+    """print out the map about the boat generated"""
+    for room in rooms:
+        print(room)
+        # create the maps in rows and columns
+        print(tabulate(map))
+        print("\n")
 
 
-
+# definite the print_map and print it for player
 def print_map():
         """Print a map of the ghost ship with directions"""
         ship_printable = """
@@ -30,3 +38,7 @@ def print_map():
                                 South
         """
         print(print_map)
+
+
+main_map()
+print_map()

@@ -4,6 +4,7 @@
 
 
 # imnport random
+# this module used on line 203, 209, 214
 import random
 
 # create a nested dictionary (a dictionary in a dictionary) for the characters
@@ -198,16 +199,19 @@ while True:
     actions = int(input("You choose to "))
 # use if-elif-else statement to explain different action from you character
     if actions == 1:
-        print("You make damage to the boss.")
+        attack = ("You make damage to the boss.", "Missing!!!")
+        print(random.choice(attack))
         print("\n")
     elif actions == 2:
         dodge = ("You dodge the boss's attack and make a few damage to"
                  " the boss.",
-                 "Boss speed is very fast. You dodged that fail.")
+                 "Boss's speed is very fast. You dodged that fail.")
         print(random.choice(dodge))
         print("\n")
     elif actions == 3:
-        print("You defense a part a damage from the boss.")
+        defense = ("You defense a part of damage.",
+                   "You defense the attack fail.")
+        print(random.choice(defense))
         print("\n")
     elif actions == 4:
         print("You run back to the last room.")

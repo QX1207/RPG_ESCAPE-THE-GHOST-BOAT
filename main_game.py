@@ -10,36 +10,38 @@ import random
 # create a nested dictionary (a dictionary in a dictionary) for the characters
 # number of character is use to count the # of character we have and help us
 # to create other code easier
-characters = {
-    'Doctor': {
-        'number': '#1',
-        'firstName': 'Jame',
-        'lastName': 'Dyer',
-        'ability': 'Med Master - you can choose to heal 50 HP when you are'
-        ' fighting with boss',
-        'health': '1500',
-        'damage': '170',
-    },
-    'Thief': {
-        'number': '#2',
-        'firstName': 'Darius',
-        'lastName': 'Pierson',
-        'ability': 'Hoarder - you will get one more weapon after you'
-        ' kill a boss',
-        'health': '1200',
-        'damage': '250',
-    },
-    'Soldier': {
-        'number': '#3',
-        'firstName': 'Naib',
-        'lastName': 'Collins',
-        'ability': 'Skilled - before you enter a new rooom, you can change a'
-        ' random weapon',
-        'health': '2000',
-        'damage': '200',
-    },
-
-}
+# https://www.daniweb.com/programming/software-development/
+# threads/334354/rpg-class-attributes-stats
+class people:
+    characters = {
+                  'Doctor': {
+                  'number': '#1',
+                  'firstName': 'Jame',
+                  'lastName': 'Dyer',
+                  'ability': 'Med Master - you can choose '
+                  'to heal 50 HP when you are fighting with boss',
+                  'health': '1500',
+                  'damage': '170',
+                 },
+                 'Thief': {
+                 'number': '#2',
+                 'firstName': 'Darius',
+                 'lastName': 'Pierson',
+                 'ability': 'Hoarder - you will get one more weapon after you'
+                 ' kill a boss',
+                 'health': '1200',
+                 'damage': '250',
+                 },
+                 'Soldier': {
+                 'number': '#3',
+                 'firstName': 'Naib',
+                 'lastName': 'Collins',
+                 'ability': 'Skilled - before you enter a new rooom,'
+                 ' you can change a random weapon',
+                 'health': '2000',
+                 'damage': '200',
+                 },
+                 }
 
 
 # use for-loop to print out my statement about characters line by line
@@ -209,7 +211,7 @@ while True:
         print(random.choice(dodge))
         print("\n")
     elif actions == 3:
-        defense = ("You defense a part of damage.",
+        defense = ("You defense     a   part of damage.",
                    "You defense the attack fail.")
         print(random.choice(defense))
         print("\n")

@@ -27,7 +27,7 @@ class people:
                  'number': '#2',
                  'firstName': 'Darius',
                  'lastName': 'Pierson',
-                 'ability': 'Hoarder - you will get one more weapon after you'
+                 'ability': 'Hoarder - you will get one more weapon after you',
                  ' kill a boss',
                  'health': '1200',
                  'damage': '250',
@@ -36,8 +36,8 @@ class people:
                  'number': '#3',
                  'firstName': 'Naib',
                  'lastName': 'Collins',
-                 'ability': 'Skilled - before you enter a new rooom,'
-                 ' you can change a random weapon',
+                 'ability': 'Skilled - before you enter a new rooom,',
+                 ' you can change your to be a random weapon',
                  'health': '2000',
                  'damage': '200',
                  },

@@ -3,10 +3,6 @@
 # Last updated date: 11/15/2019
 
 
-import random
-from tabulate import tabulate
-
-
 # create a list about area in my game
 rooms = [["Officer's Quarters", "Navgation", "First Mate's Quarters",
           "Captain's Quarters"],

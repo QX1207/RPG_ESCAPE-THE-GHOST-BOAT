@@ -149,25 +149,32 @@ def directions(playerDirections):
 # after for loop, use while loop to repeat the question until it is break
 while True:
     directions(playerDirections)
+ # the try statement attempts tp exceute the user input
+    try:
 # create a user input
-    selections = int(input("Enter choice: "))
-# use if-elif-else statement to explain different movements
-    if selections == 1:
-        print("You are going forward to the next room.")
-        print("\n")
-    elif selections == 2:
-        print("You are going to the right room.")
-        print("\n")
-    elif selections == 3:
-        print("You are going backward.")
-        print("\n")
-    elif selections == 4:
-        print("You are going to the left room. You find the monster!")
-        print("\n")
-        break
+        selections = int(input("Enter choice: "))
+# if the user did not input a number, the user is prompted to try again
+    except ValueError:
+        print("Input is not a number. Try again.")
     else:
-        print("Please enter the following number of directions to move")
-        print("\n")
+# use if-elif-else statement to explain different movements
+        if selections == 1:
+            print("You are going forward to the next room.")
+            print("\n")
+        elif selections == 2:
+            print("You are going to the right room.")
+            print("\n")
+        elif selections == 3:
+            print("You are going backward.")
+            print("\n")
+        elif selections == 4:
+            print("You are going to the left room. You find the monster!")
+            print("\n")
+            break
+        else:
+            print("Please enter the following number of directions"
+                  "to move")
+            print("\n")
 
 
 # 7 choice to decide your reaction, attack(make damage to the boss),

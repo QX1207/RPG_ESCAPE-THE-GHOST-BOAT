@@ -35,3 +35,22 @@ def print_map():
 
 main_map()
 print_map()
+
+
+class CharactersI():
+    """CharactersI class with characters' informations"""
+    def__init__(self):
+        # Player starting coordinates
+        self.x =
+        self.y =
+        """initialize attributes of the parent class"""
+        self.hp = 1000
+        self.victory =False
+
+
+    def is_alive(self):
+        """player is alive if they have at least 1 HP"""
+        return self.hp > 0
+
+
+    def 

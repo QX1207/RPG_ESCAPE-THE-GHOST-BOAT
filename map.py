@@ -3,6 +3,8 @@
 # Last updated date: 11/15/2019
 
 
+import random
+
 # create a list about area in my game
 rooms = [["Officer's Quarters", "Navgation", "First Mate's Quarters",
           "Captain's Quarters"],
@@ -38,6 +40,37 @@ main_map()
 visual_map()
 
 
+class Monster(object):
+    """Monster"""
+    def __init__(self,name,level):
+        self.name = name
+        self.level = level
+
+# Monsters
+Monster_a = Monster("a","1")
+Monster_b = Monster("b","2")
+Monster_c = Monster("c","3")
+Monster_d = Monster("d","4")
+Monster_e = Monster("e","5")
+def make_monster():
+        # 2 = monster in room; else, no monster
+        monster_in = random.randrange(3)
+        if monster_in == (0 or 1):
+                return 0
+        monster = random.randrange(5)
+        if monster == 0:
+                monster = a
+        elif monster == 1:
+                monster = b
+        elif monster == 2:
+                monster = c
+        elif monster == 3:
+                monster = d
+        elif monster == 4:
+                monster = e
+        return monster
+
+
 class CharactersI():
     """CharactersI class with characters' informations"""
     def __init__(self, x, y):
@@ -46,7 +79,7 @@ class CharactersI():
         self.y = y
         """initialize attributes of the parent class"""
         self.hp = 1000
-        self.victory =False
+        self.victory = False
 
     def is_alive(self):
         """player is alive if they have at least 1 HP"""

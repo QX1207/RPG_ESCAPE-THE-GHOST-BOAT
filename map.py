@@ -124,3 +124,98 @@ def make_monster():
         elif monster == 4:
                 monster = e
         return monster
+
+
+# defining the layout of the ghost ship
+# ship_map = [
+# |Officer's Quarters|Navgation   |First Mate's Quarters|Captain's Quarters|
+# | Fore Castle Deck |Long Boat   |      Main-Mast      |       Wheel      |
+# | Fore Hold        |Cargo Access|     Capstan         |  Officer's Mess  |
+# | Live stock Hold  |Infirmary   |     Cable Stores    | Carpenter Stores |
+# ]
+# initialize the ship's map
+ship_map = []
+
+
+def tile_at(x, y):
+    """Locates the tile at a coordinate"""
+    if x < 0 or y < 0:
+        return None
+    try:
+        return ship_map[y][x]
+    except IndexError:
+        return None
+
+
+# ship's map
+ship_dsl = """
+|A0|A1|A2|A3|
+|B0|B1|B2|B3|
+|C0|C1|C2|C3|
+|D0|D1|D2|D3|
+"""
+
+
+def is_dsl_valid(dsl):
+    """
+    Check to make sure there is only one start tile and escape pod.
+    Also check that each row has the same number of columns
+    """
+    if dsl.count("|ST|") != 1:
+        return False
+    if dsl.count("|EP|") == 0:
+        return False
+    lines = dsl.splitlines()
+    lines = [l for l in lines if l]
+    pipe_counts = [line.count("|") for line in lines]
+    for count in pipe_counts:
+        if count != pipe_counts[0]:
+            return False
+    return True
+
+
+# key to the ship's map
+tile_type_dict = {"EP": EscapePod,
+                  "ST": StartTile,
+                  "IT": SuppliesTile,
+                  "ET": EnemyTile,
+                  "BT": BoringTile,
+                  "MP": ViewMapTile,
+                  "  ": None}
+# initialize the start tile
+start_tile_location = None
+
+
+def parse_ship_dsl():
+    """Taking the ship map as a string and returning a list"""
+    if not is_dsl_valid(ship_dsl):
+        raise SyntaxError("DSL is invalid!")
+
+    dsl_lines = ship_dsl.splitlines()
+    dsl_lines = [x for x in dsl_lines if x]
+    # Iterate over each line in the DSL.
+    for y, dsl_row in enumerate(dsl_lines):
+        # Create an object to store the tiles
+        row = []
+        # Split the line into abbreviations
+        dsl_cells = dsl_row.split("|")
+        # The split method includes the beginning
+        # and end of the line so we need to remove
+        # those nonexistent cells
+        dsl_cells = [c for c in dsl_cells if c]
+        # Iterate over each cell in the DSL line
+        for x, dsl_cells in enumerate(dsl_cells):
+            # Look up the abbreviation in the dictionary
+            tile_type = tile_type_dict[dsl_cells]
+            # set the start tile location
+            if tile_type == StartTile:
+                global start_tile_location
+                start_tile_location = x, y
+            # If the dictionary returned a valid type, create
+            # a new tile object, pass it the X-Y coordinates
+            # as required by the tile __init__(), and add
+            # it to the row object. If None was found in the
+            # dictionary, we just add None.
+            row.append(tile_type(x, y) if tile_type else None)
+        # Add the whole row to the ship_map
+        ship_map.append(row)

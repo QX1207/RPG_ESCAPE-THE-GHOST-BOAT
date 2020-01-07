@@ -4,6 +4,7 @@
 
 
 import random
+import sys
 
 # create a list about area in my game
 rooms = [["Officer's Quarters", "Navgation", "First Mate's Quarters",
@@ -21,8 +22,53 @@ def main_map():
         print(room)
 
 
-# definite the print_map and print it for player in a class
-class visual_map:
+class Player:
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 100
+        self.health = self.maxhealth
+        self.base_attack = 10
+
+
+class MapCoordinates():
+    """ Map with x and y coordinates"""
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def is_alive(self):
+        """player is alive if they have at least 1 HP"""
+        return self.hp > 0
+
+    def __str__(self):
+        return self.inventory
+
+    def intro_text(self):
+        raise NotImplementedError("Create a subclass instead!")
+
+    def modify_player(self, player):
+        """Added modify_player to every tile"""
+        pass
+
+
+class StartTile(MapCoordinates):
+    """Player starting position"""
+
+    def intro_text(self):
+        """Descriptive text for the Start Tile"""
+        return """
+
+        """
+
+
+class ViewMapTile(MapTile):
+    """Position that prints a map"""
+    def intro_text(self):
+        """Descriptive text for the Viewable Map Tile"""
+        return """
+        You see a map on the wall.
+        """
+
     def print_map():
         """Print a map of the ghost ship with directions"""
         print_map = """
@@ -33,11 +79,20 @@ class visual_map:
     | Live stock Hold  |Infirmary   |     Cable Stores    | Carpenter Stores |
                                 South
     """
-        print(print_map)
+    print(print_map)
 
 
-main_map()
-visual_map()
+class ForeHold(MapCoordinates):
+    """Position that contains the Fore Hold"""
+    def modify_player(self, player):
+        """Player wins the game if they reach the Fore Hold"""
+        player.victory = True
+        sys.exit()
+
+    def intro_text(self):
+        return """
+        You found the Fore Hold! You can leave the ghost ship SV Mary Celeste.
+        """
 
 
 class Monster(object):
@@ -69,28 +124,3 @@ def make_monster():
         elif monster == 4:
                 monster = e
         return monster
-
-
-class CharactersI():
-    """CharactersI class with characters' informations"""
-    def __init__(self, x, y):
-        # Player starting coordinates
-        self.x = x
-        self.y = y
-        """initialize attributes of the parent class"""
-        self.hp = 1000
-        self.victory = False
-
-    def is_alive(self):
-        """player is alive if they have at least 1 HP"""
-        return self.hp > 0
-
-    def __str__(self):
-        return self.inventory
-
-    def intro_text(self):
-        raise NotImplementedError("Create a subclass instead!")
-
-    def modify_player(self, player):
-        """Added modify_player to every tile"""
-        pass

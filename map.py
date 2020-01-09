@@ -9,7 +9,7 @@ import sys
 # create a list about area in my game
 rooms = [["Officer's Quarters", "Navgation", "First Mate's Quarters",
           "Captain's Quarters"],
-         ["Fore Castle Deck", "Long Boat (Escape gate)",
+         ["Escape Pod", "Long Boat",
           "Main-Mast", "Wheel"],
          ["Fore Hold", "Cargo Access", "Capstan", "Officer's Mess"],
          ["Live stock Hold", "Infirmary", "Cable Stores", "Carpenter Stores"]]
@@ -74,7 +74,7 @@ class ViewMapTile(MapTile):
         print_map = """
                                 North
     |Officer's Quarters|Navgation   |First Mate's Quarters|Captain's Quarters|
-    | Fore Castle Deck |Long Boat   |      Main-Mast      |       Wheel      |
+    | Escape Pod       |Long Boat   |      Main-Mast      |       Wheel      |
     | Fore Hold        |Cargo Access|     Capstan         |  Officer's Mess  |
     | Live stock Hold  |Infirmary   |     Cable Stores    | Carpenter Stores |
                                 South
@@ -102,11 +102,18 @@ class Monster(object):
         self.level = level
 
 # Monsters
-Monster_a = Monster("a","1")
-Monster_b = Monster("b","2")
-Monster_c = Monster("c","3")
-Monster_d = Monster("d","4")
-Monster_e = Monster("e","5")
+Monster_a = Monster("a","0")
+Monster_b = Monster("b","1")
+Monster_c = Monster("c","2")
+Monster_d = Monster("d","3")
+Monster_e = Monster("e","4")
+Monster_f = Monster("f","5")
+Monster_g = Monster("g","6")
+Monster_h = Monster("h","7")
+Monster_i = Monster("i","8")
+Monster_j = Monster("j","9")
+Monster_k = Monster("k","10")
+Monster_l = Monster("l","11")
 def make_monster():
         # 2 = monster in room; else, no monster
         monster_in = random.randrange(3)
@@ -123,13 +130,135 @@ def make_monster():
                 monster = d
         elif monster == 4:
                 monster = e
+        elif monster == 5:
+                monster = f
+        elif monster == 6:
+                monster = g
+        elif monster == 7:
+                monster = h
+        elif monster == 8:
+                monster = i
+        elif monster == 9:
+                monster = j
+        elif monster == 10:
+                monster = k
+        elif monster == 11:
+                monster = l
         return monster
+
+
+class Goblin:
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 50
+        self.health = self.maxhealth
+        self.attack = 5
+GoblinInGame = Goblin("Goblin")
+
+
+class Tiger:
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 200
+        self.health = self.maxhealth
+        self.attack = 30
+TigerInGame = Tiger("Tiger")
+
+
+class Dragon:
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 300
+        self.health = self.maxhealth
+        self.attack = 25
+DragonInGame = Dragon("Dragon")
+
+
+class Dark_Turtle:
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth = 1000
+        self.health = self.maxhealth
+        self.attack = 1
+DarkTurtleInGame = Dark_Turtle("Dark Turtle")
+
+
+class :
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth =
+        self.health = self.maxhealth
+        self.attack =
+InGame = ("")
+
+
+class :
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth =
+        self.health = self.maxhealth
+        self.attack =
+InGame = ("")
+
+
+class :
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth =
+        self.health = self.maxhealth
+        self.attack =
+InGame = ("")
+
+
+class :
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth =
+        self.health = self.maxhealth
+        self.attack =
+InGame = ("")
+
+
+class :
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth =
+        self.health = self.maxhealth
+        self.attack =
+InGame = ("")
+
+
+class :
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth =
+        self.health = self.maxhealth
+        self.attack =
+InGame = ("")
+
+
+class :
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth =
+        self.health = self.maxhealth
+        self.attack =
+InGame = ("")
+
+
+class :
+    def __init__(self, name):
+        self.name = name
+        self.maxhealth =
+        self.health = self.maxhealth
+        self.attack =
+InGame = ("")
 
 
 # defining the layout of the ghost ship
 # ship_map = [
 # |Officer's Quarters|Navgation   |First Mate's Quarters|Captain's Quarters|
-# | Fore Castle Deck |Long Boat   |      Main-Mast      |       Wheel      |
+# | Escape Pod       |Long Boat   |      Main-Mast      |       Wheel      |
 # | Fore Hold        |Cargo Access|     Capstan         |  Officer's Mess  |
 # | Live stock Hold  |Infirmary   |     Cable Stores    | Carpenter Stores |
 # ]
@@ -149,8 +278,8 @@ def tile_at(x, y):
 
 # ship's map
 ship_dsl = """
-|A0|A1|A2|A3|
-|B0|B1|B2|B3|
+|A0|A1|A2|AS|
+|BE|B1|B2|B3|
 |C0|C1|C2|C3|
 |D0|D1|D2|D3|
 """
@@ -161,9 +290,9 @@ def is_dsl_valid(dsl):
     Check to make sure there is only one start tile and escape pod.
     Also check that each row has the same number of columns
     """
-    if dsl.count("|ST|") != 1:
+    if dsl.count("|AS|") != 1:
         return False
-    if dsl.count("|EP|") == 0:
+    if dsl.count("|BE|") == 0:
         return False
     lines = dsl.splitlines()
     lines = [l for l in lines if l]
@@ -175,8 +304,8 @@ def is_dsl_valid(dsl):
 
 
 # key to the ship's map
-tile_type_dict = {"EP": EscapePod,
-                  "ST": StartTile,
+tile_type_dict = {"BE": EscapePod,
+                  "AS": StartTile,
                   "IT": SuppliesTile,
                   "ET": EnemyTile,
                   "BT": BoringTile,
@@ -196,7 +325,7 @@ def parse_ship_dsl():
     # Iterate over each line in the DSL.
     for y, dsl_row in enumerate(dsl_lines):
         # Create an object to store the tiles
-        row = []
+        row = []x  0
         # Split the line into abbreviations
         dsl_cells = dsl_row.split("|")
         # The split method includes the beginning

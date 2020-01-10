@@ -12,3 +12,22 @@ epicWeapon = ["Star Wand - Final Justice", "Death Stone - Dark Hallow",
               "Unknown Sword - Broken Sword from the Stone"]
 # a list of legenary weapon in the game
 legendaryWeapon = "Chaos Mirror"
+
+
+class Weapon():
+    """Weapon Class to raise errors and return the weapon's name"""
+    def __init__(self):
+        raise NotImplementedError("Do not create raw Weapon objects")
+
+    def __str__(self):
+        return "{} (+ {} Damage)".format(self.name, self.damage)
+
+
+class Wood_Sword(Weapon):
+    """Wood Sword weapon class with description and damage"""
+    def __init__(self):
+        self.name = "Wood Sword"
+        self.description = """
+                            A Wood Sword for damaging boss
+                            """
+        self.damage = 5

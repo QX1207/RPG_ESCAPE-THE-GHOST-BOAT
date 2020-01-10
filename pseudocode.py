@@ -37,17 +37,15 @@
 # character files:
 # Character number 1
 #   name: doctor Jame Dyer
-#   ability: Med Master - you can choose to heal 50 HP
-#            when you are fighting with boss
-
+#   ability: Med Master - heal 50% HP
 
 #   name: Thief - Darius Pierson
-#   ability: Hoarder - you will get one more weapon after you kill a boss
+#   ability: Hoarder - after you attack the boss, you will restore HP that
+#                      equal 10% of your damage
 
 
 #   name: Soldier - Naib Collins
-#   ability: Skilled - before you enter a new rooom, you can change
-#            a random weapon
+#   ability: Skilled - you has 50% to attack the boss twice in a time
 
 # character appear in the room 1 (empty room)
 

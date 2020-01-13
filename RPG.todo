@@ -11,7 +11,16 @@ Game:
     ☐ Write a story for the game (have more detail)
 
 Classes:
-    ☐ Inventory
-    ✔ Character @done(2019-10-23 09:17) @project(Classes)
-    ☐ Maps
+    ✔ Inventory(weapon.py) @done(2019-12-13 08:36) @project(Classes)
+    ✔ Character(main_game) @done(2019-10-23 09:17) @project(Classes)
+    ✔ Maps(map.py) @done(2019-12-13 08:36) @project(Classes)
     ☐ Enemies
+    ☐ Maps1
+
+Features:
+    ☐ Start list
+    ☐ Chosen character
+    ☐ Appear in the room
+    ☐ Fight with boss
+    ☐ Get some weapons
+    ☐ Escape the rooms

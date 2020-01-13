@@ -102,18 +102,18 @@ class Monster(object):
         self.level = level
 
 # Monsters
-Monster_a = Monster("a","0")
-Monster_b = Monster("b","1")
-Monster_c = Monster("c","2")
-Monster_d = Monster("d","3")
-Monster_e = Monster("e","4")
-Monster_f = Monster("f","5")
-Monster_g = Monster("g","6")
-Monster_h = Monster("h","7")
-Monster_i = Monster("i","8")
-Monster_j = Monster("j","9")
-Monster_k = Monster("k","10")
-Monster_l = Monster("l","11")
+Monster_Goblin = Monster("Goblin","0")
+Monster_Tiger = Monster("Tiger","1")
+Monster_Dragon = Monster("Dragon","2")
+Monster_Dark_Turtle = Monster("Dark Turtle","3")
+Monster_Phoenix = Monster("Phoenix","4")
+Monster_Ripper = Monster("Ripper","5")
+Monster_Ghoul = Monster("Ghoul","6")
+Monster_Gold_Monkey = Monster("Gold_Monkey","7")
+Monster_Gluttonous = Monster("Gluttonous","8")
+Monster_White_Fox = Monster("White_Fox","9")
+Monster_Goblin_Archer = Monster("Goblin_Archer","10")
+Monster_Void_Emperor = Monster("Void_Emperor","11")
 def make_monster():
         # 2 = monster in room; else, no monster
         monster_in = random.randrange(3)
@@ -121,138 +121,30 @@ def make_monster():
                 return 0
         monster = random.randrange(5)
         if monster == 0:
-                monster = a
+                monster = Goblin
         elif monster == 1:
-                monster = b
+                monster = Tiger
         elif monster == 2:
-                monster = c
+                monster = Dragon
         elif monster == 3:
-                monster = d
+                monster = Dark_Turtle
         elif monster == 4:
-                monster = e
+                monster = Phoenix
         elif monster == 5:
-                monster = f
+                monster = Ripper
         elif monster == 6:
-                monster = g
+                monster = Ghoul
         elif monster == 7:
-                monster = h
+                monster = Gold_Monkey
         elif monster == 8:
-                monster = i
+                monster = Gluttonous
         elif monster == 9:
-                monster = j
+                monster = White_Fox
         elif monster == 10:
-                monster = k
+                monster = Goblin_Archer
         elif monster == 11:
-                monster = l
+                monster = Void_Emperor
         return monster
-
-
-class Goblin:
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth = 50
-        self.health = self.maxhealth
-        self.attack = 5
-GoblinInGame = Goblin("Goblin")
-
-
-class Tiger:
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth = 200
-        self.health = self.maxhealth
-        self.attack = 30
-TigerInGame = Tiger("Tiger")
-
-
-class Dragon:
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth = 300
-        self.health = self.maxhealth
-        self.attack = 25
-DragonInGame = Dragon("Dragon")
-
-
-class Dark_Turtle:
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth = 1000
-        self.health = self.maxhealth
-        self.attack = 1
-DarkTurtleInGame = Dark_Turtle("Dark Turtle")
-
-
-class :
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth =
-        self.health = self.maxhealth
-        self.attack =
-InGame = ("")
-
-
-class :
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth =
-        self.health = self.maxhealth
-        self.attack =
-InGame = ("")
-
-
-class :
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth =
-        self.health = self.maxhealth
-        self.attack =
-InGame = ("")
-
-
-class :
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth =
-        self.health = self.maxhealth
-        self.attack =
-InGame = ("")
-
-
-class :
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth =
-        self.health = self.maxhealth
-        self.attack =
-InGame = ("")
-
-
-class :
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth =
-        self.health = self.maxhealth
-        self.attack =
-InGame = ("")
-
-
-class :
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth =
-        self.health = self.maxhealth
-        self.attack =
-InGame = ("")
-
-
-class :
-    def __init__(self, name):
-        self.name = name
-        self.maxhealth =
-        self.health = self.maxhealth
-        self.attack =
-InGame = ("")
 
 
 # defining the layout of the ghost ship

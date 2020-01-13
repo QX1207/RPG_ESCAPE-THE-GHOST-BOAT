@@ -237,3 +237,11 @@ while True:
     else:
         print("Please enter a number to finish your action")
         print("\n")
+
+
+class Weapon:
+    """"""A simple attempt to represent my weapons' inventory."""
+    def __init__ (self, room, ability):
+        """Initialize attributes to describe our weapons' inventory."""
+        self.room = room
+        self.ability = ability

@@ -5,6 +5,7 @@
 
 import random
 import sys
+import boss
 
 # create a list about area in my game
 rooms = [["Officer's Quarters", "Navgation", "First Mate's Quarters",
@@ -61,7 +62,7 @@ class StartTile(MapCoordinates):
         """
 
 
-class ViewMapTile(MapTile):
+class ViewMapTile(MapCoordinates):
     """Position that prints a map"""
     def intro_text(self):
         """Descriptive text for the Viewable Map Tile"""
@@ -82,16 +83,16 @@ class ViewMapTile(MapTile):
     print(print_map)
 
 
-class ForeHold(MapCoordinates):
-    """Position that contains the Fore Hold"""
+class EscapeRoom(MapCoordinates):
+    """Position that contains the Escape Room"""
     def modify_player(self, player):
-        """Player wins the game if they reach the Fore Hold"""
+        """Player wins the game if they reach the Escape Room"""
         player.victory = True
         sys.exit()
 
     def intro_text(self):
         return """
-        You found the Fore Hold! You can leave the ghost ship SV Mary Celeste.
+        You found the EscapeRoom! You can leave the ghost ship SV Mary Celeste.
         """
 
 
@@ -150,7 +151,7 @@ def make_monster():
 # defining the layout of the ghost ship
 # ship_map = [
 # |Officer's Quarters|Navgation   |First Mate's Quarters|Captain's Quarters|
-# | Escape Pod       |Long Boat   |      Main-Mast      |       Wheel      |
+# | Escape room      |Long Boat   |      Main-Mast      |       Wheel      |
 # | Fore Hold        |Cargo Access|     Capstan         |  Officer's Mess  |
 # | Live stock Hold  |Infirmary   |     Cable Stores    | Carpenter Stores |
 # ]
@@ -170,8 +171,8 @@ def tile_at(x, y):
 
 # ship's map
 ship_dsl = """
-|A0|A1|A2|AS|
-|BE|B1|B2|B3|
+|A0|A1|A2|A3|
+|B0|B1|B2|B3|
 |C0|C1|C2|C3|
 |D0|D1|D2|D3|
 """
@@ -196,13 +197,22 @@ def is_dsl_valid(dsl):
 
 
 # key to the ship's map
-tile_type_dict = {"BE": EscapePod,
-                  "AS": StartTile,
-                  "IT": SuppliesTile,
-                  "ET": EnemyTile,
-                  "BT": BoringTile,
-                  "MP": ViewMapTile,
-                  "  ": None}
+tile_type_dict = {"B0": EscapeRoom,
+                  "A3": StartTile,
+                  "A1": Monster,
+                  "A2": Monster,
+                  "A3": Monster,
+                  "B1": Monster,
+                  "B3": Monster,
+                  "C0": Monster,
+                  "C2": Monster,
+                  "D0": Monster,
+                  "D1": Monster,
+                  "D2": Monster,
+                  "D3": Monster,
+                  "D0": Monster,
+                  "C3": ViewMapTile,
+                  "": None}
 # initialize the start tile
 start_tile_location = None
 
@@ -217,7 +227,7 @@ def parse_ship_dsl():
     # Iterate over each line in the DSL.
     for y, dsl_row in enumerate(dsl_lines):
         # Create an object to store the tiles
-        row = []x  0
+        row = []
         # Split the line into abbreviations
         dsl_cells = dsl_row.split("|")
         # The split method includes the beginning

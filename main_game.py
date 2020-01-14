@@ -3,10 +3,13 @@
 # Last updated date: 10/25/2019
 
 
-# imnport random
-# this module used on line 203, 209, 214
+# imnport
 import random
-
+import sys
+import character
+import map
+from tabulate import tabulate
+import weapon
 # create a nested dictionary (a dictionary in a dictionary) for the characters
 # number of character is use to count the # of character we have and help us
 # to create other code easier
@@ -239,9 +242,96 @@ while True:
         print("\n")
 
 
-class Weapon:
-    """"""A simple attempt to represent my weapons' inventory."""
-    def __init__ (self, room, ability):
-        """Initialize attributes to describe our weapons' inventory."""
-        self.room = room
-        self.ability = ability
+def play():
+    """Print an action menu and allow for continous game play"""
+    # print title of game
+    # intro_text()
+    # valid directions and actions for the characters
+    action = ["quit", "characters", "map"]
+    directions = ["north", "south", "east", "west"]
+    # print a list a valid actions before user input. Organized according to
+    # possible direction and actions
+    print("\n")
+    print_actions(action)
+    while True:
+        # after user input, print out the action choosen by the user
+        action_input = get_player_command("Action: ")
+        if action_input in action:
+            print(f"{action_input.title()}!")
+            if action_input == "quit":
+                sys.exit()
+            # after the map is choosen, player chooses character
+            elif action_input == "map":
+                choose_map()
+                choose_character()
+                add_action(action)
+            # after the character is choosen, player chooses the map to play
+            elif action_input == "characters":
+                choose_character()
+                choose_map()
+                add_action(action)
+            elif action_input == "move":
+                # directions menu and options appear when move is choosen
+                for d in directions:
+                    print(d)
+                user_direction = get_player_command("What direction?")
+                if user_direction in directions:
+                    print(f"Moving {user_direction}")
+                    print("\n")
+                else:
+                    print("Invalid direction")
+                    print("\n")
+        else:
+            print("Invalid action!")
+            print("\n")
+
+
+def get_player_command(message):
+    """Get user input and convert the string to lowercase"""
+    action_input = input(message)
+    return action_input.lower()
+
+
+def choose_character():
+    """User chooses which hero they wish to play as"""
+    print("Possible Characters:")
+    people = character.characters
+    for people in character:
+        print(characters)
+    while True:
+        input = get_player_command("What character would you like to play?")
+        player = input.title()
+        # prevent input error if the user does not input The Flash
+        if player == "Thief":
+            player = "Thief"
+        # print the choosen character with characteristics and inventory
+        if player in character.characters:
+            print(f"Welcome, {player}!")
+            character.character_check(player)
+            weapon.player_weapon(player, weapon.weapon)
+            print("\n")
+            break
+        else:
+            print("Invalid Character")
+            print("\n")
+
+def add_action(list):
+    """Unlock actions after characters and map is chosen"""
+    unlock_action = ['attack', 'dodge', 'defense', 'run back(quit)',
+                     'use your ability']
+    list.remove("map")
+    list.remove("characters")
+    for action in unlock_action:
+        list.append(action)
+    print_actions(list)
+    print("\n")
+
+
+def print_actions(action):
+    print(f"Complete one of the following actions:")
+    for user_action in action:
+        print(f"* {user_action}")
+    print("\n")
+
+
+play()

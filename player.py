@@ -1,14 +1,15 @@
 import weapon
 import map
+import random
 
 class Player:
     """Player class with inventory and weapon"""
     def __init__(self):
         # begining weapon in inventory
-        self.inventory = [weapon.Wood_Sword())]
+        self.weapons = [random.commonWeapon())]
         # player starting coordinates
         self.x = ship.start_tile_location[0]
-        self.y = ship.start_tile_location[1]
+        self.y = ship.start_tile_location[4]
         # self.x = 1
         # self.y = 2
         self.hp = 100
@@ -45,20 +46,20 @@ class Player:
         self.x += dx
         self.y += dy
 
-    def move_forward(self):
-        """Define forward movement"""
+    def move_upstairs(self):
+        """Define upstairs movement"""
         self.move(dx=0, dy=-1)
 
-    def move_aftward(self):
-        """Define aftward movement"""
+    def move_downstairs(self):
+        """Define downstairs movement"""
         self.move(dx=0, dy=1)
 
-    def move_starboard(self):
-        """Define movement towards the starboard side"""
+    def move_forward(self):
+        """Define forward movement"""
         self.move(dx=1, dy=0)
 
-    def move_port(self):
-        """Define movement towards the port side"""
+    def move_afterward(self):
+        """Define afterward movement"""
         self.move(dx=-1, dy=0)
 
     def attack(self):

@@ -78,52 +78,6 @@ class Player:
         else:
             print("{} HP is {}.".format(enemy.name, enemy.hp))
 
-    def protect(self):
-        """Check and use items for protection"""
-        # add protection items from Inventory
-        protection = [item for item in self.inventory
-                      if isinstance(item, items.Protection)]
-        # print a message if there are no protection items
-        if not protection:
-            print("You do not have any items to protect you!")
-            return
-        position = ship.tile_at(self.x, self.y)
-        enemy = position.enemy
-        # bread = items.CrustyBread()
-        if enemy.name == "Flock of Blue Space Ducks":
-            print("Bread protection value against ducks is -100 Damage")
-        # print out a list of available protection items
-        print("Choose an item to use to protect yourself: ")
-        for i, item in enumerate(protection, 1):
-            print("{}. {}".format(i, item))
-        # choose a protection item from the list and use it
-        valid = False
-        while not valid:
-            choice = input("")
-            try:
-                to_use = protection[int(choice) - 1]
-                # remove used item from the inventory
-                self.inventory.remove(to_use)
-                if enemy.name == "Flock of Blue Space Ducks":
-                    if to_use.name == "Crusty Bread":
-                        to_use.protect_value = 100
-                else:
-                    if to_use.name == "Crusty Bread":
-                        to_use.protect_value = 0
-
-                # decrease damage by using a protection item
-                # limit enemy damage to not drop below 0
-                enemy.damage = enemy.damage - to_use.protect_value
-                if enemy.damage > 0:
-                    return enemy.damage
-                else:
-                    enemy.damage = 0
-                    return enemy.damage
-                print("Potential Damage: {}".format(enemy.damage))
-                valid = True
-            except (ValueError, IndexError):
-                print("Invalid choice, try again.")
-
     def add_supplies(self):
         """Add supplies to the player's inventory when supplies are found"""
         # define the position in the ship

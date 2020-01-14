@@ -78,38 +78,6 @@ class Player:
         else:
             print("{} HP is {}.".format(enemy.name, enemy.hp))
 
-    def heal(self):
-        """Check and use consumables for healing"""
-        # add consumables from the inventory
-        consumables = [item for item in self.inventory
-                       if isinstance(item, items.Consumable)]
-
-        # print a message if there are no consumables
-        if not consumables:
-            print("You do not have any items to heal you!")
-            return
-
-        # print out a list of available consumables
-        print("Choose an item to use to heal yourself: ")
-        for i, item in enumerate(consumables, 1):
-            print("{}. {}".format(i, item))
-
-        # choose a consumable from the list and use it
-        valid = False
-        while not valid:
-            choice = input("")
-            try:
-                to_use = consumables[int(choice) - 1]
-                # cap player's health points to 100
-                self.hp = min(100, self.hp + to_use.healing_value)
-                # remove the used item from the inventory
-                # and print current health points
-                self.inventory.remove(to_use)
-                print("Current HP: {}".format(self.hp))
-                valid = True
-            except (ValueError, IndexError):
-                print("Invalid choice, try again.")
-
     def protect(self):
         """Check and use items for protection"""
         # add protection items from Inventory

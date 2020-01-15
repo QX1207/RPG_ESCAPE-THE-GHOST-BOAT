@@ -108,146 +108,12 @@ for weaponInventory, weaponInventory_info in weaponInventory.items():
 print("\n")
 
 
-# create a nested dictionary (a dictionary in a dictionary) for the locations
-currentLocations = {
-    'room #1': {'l1': 'Wheelhouse', 'l2': 'Level C Boss'},
-    'room #2': {'l1': 'Accommodators', 'l2': 'Level C Boss'},
-    'room #3': {'l1': 'Mess Area', 'l2': 'Level B Boss'},
-    'room #4': {'l1': 'Preparation room', 'l2': 'Level A Boss'},
-}
-
-
-# use for-loop to print out my statement about locations line by line
-for name, currentlocations_info in currentLocations.items():
-    l1 = currentlocations_info["l1"]
-    l2 = currentlocations_info["l2"]
-    print(f"\n{name.title()} is {l1} on the ship. There is"
-          f" a {l2} in this area")
-
-
-# print two empty line that make it easy to read
-print("\n")
-
-
-# print out a statement about the story
-print("There are some monsters on the ship. Let us begin the adventure.")
-# create a llist about the directions
-playerDirections = ["North", "East", "South", "West(quit)"]
-
-
-# Updated #2 about the definitions of function in the mian_game.py
-# Edited person: Qian Xiang
-# Last updated date: 11/7/2019
-
-
-# create a definition of the function
-# use for loop to print my selections
-def directions(playerDirections):
-    for playerDirection in playerDirections:
-        print(
-            f"{playerDirections.index(playerDirection) + 1}.{playerDirection}"
-            )
-# print out a statement that introduce the choices they face
-    print("Go in one of the direction above (please enter the number):")
-# after for loop, use while loop to repeat the question until it is break
-while True:
-    directions(playerDirections)
- # the try statement attempts tp exceute the user input
-    try:
-# create a user input
-        selections = int(input("Enter choice: "))
-# if the user did not input a number, the user is prompted to try again
-    except ValueError:
-        print("Input is not a number. Try again.")
-    else:
-# use if-elif-else statement to explain different movements
-        if selections == 1:
-            print("You are going forward to the next room.")
-            print("\n")
-        elif selections == 2:
-            print("You are going to the right room.")
-            print("\n")
-        elif selections == 3:
-            print("You are going backward.")
-            print("\n")
-        elif selections == 4:
-            print("You are going to the left room. You find the monster!")
-            print("\n")
-            break
-        else:
-            print("Please enter the following number of directions"
-                  "to move")
-            print("\n")
-
-
-# 7 choice to decide your reaction, attack(make damage to the boss),
-# dodge(dodge the boss's attack and make a few damage to the boss, maybe fail),
-# defense(defense a part a damage from the boss), run back(),
-# a choice to use your weapon, a choice to use your character ability
-# (only doctor yet), and a choice to use your consumble
-
-
-# print a multiple choise question about the action
-print("Choose the following action to beat the boss",
-      "(please enter the number): ")
-# create a list about the character's actions when you meet a bosses
-characterActions = ['attack', 'dodge', 'defense', 'run back(quit)',
-                    'use your ability', 'use your weapon',
-                    'use your consumble']
-
-
-# create a definition of the function
-# use for loop to print my selections
-def behavior(characterActions):
-    for characterAction in characterActions:
-        print(
-            f"{characterActions.index(characterAction) + 1}. {characterAction}"
-            )
-# after for loop, use while loop to repeat the question until it is break
-while True:
-    behavior(characterActions)
-    # create a user input
-    actions = int(input("You choose to "))
-# use if-elif-else statement to explain different action from you character
-    if actions == 1:
-        attack = ("You make damage to the boss.", "Missing!!!")
-        print(random.choice(attack))
-        print("\n")
-    elif actions == 2:
-        dodge = ("You dodge the boss's attack and make a few damage to"
-                 " the boss.",
-                 "Boss's speed is very fast. You dodged that fail.")
-        print(random.choice(dodge))
-        print("\n")
-    elif actions == 3:
-        defense = ("You defense     a   part of damage.",
-                   "You defense the attack fail.")
-        print(random.choice(defense))
-        print("\n")
-    elif actions == 4:
-        print("You run back to the last room.")
-        print("\n")
-        break
-    elif actions == 5:
-        print("Ablility list")
-        print("\n")
-    elif actions == 6:
-        print("Weapon Inventory")
-        print("\n")
-    elif actions == 7:
-        print("Consumble Inventory")
-        print("\n")
-    else:
-        print("Please enter a number to finish your action")
-        print("\n")
-
-
 def play():
     """Print an action menu and allow for continous game play"""
     # print title of game
     # intro_text()
     # valid directions and actions for the characters
-    action = ["quit", "characters", "map"]
+    action = ["quit", "characters"]
     directions = ["north", "south", "east", "west"]
     # print a list a valid actions before user input. Organized according to
     # possible direction and actions
@@ -260,15 +126,10 @@ def play():
             print(f"{action_input.title()}!")
             if action_input == "quit":
                 sys.exit()
-            # after the map is choosen, player chooses character
-            elif action_input == "map":
-                choose_map()
-                choose_character()
-                add_action(action)
             # after the character is choosen, player chooses the map to play
             elif action_input == "characters":
-                choose_character()
-                choose_map()
+                choose_people()
+                choose_weapon()
                 add_action(action)
             elif action_input == "move":
                 # directions menu and options appear when move is choosen
@@ -292,16 +153,16 @@ def get_player_command(message):
     return action_input.lower()
 
 
-def choose_character():
+def choose_people():
     """User chooses which hero they wish to play as"""
     print("Possible Characters:")
     people = character.characters
-    for people in character:
+    for characters in people:
         print(characters)
     while True:
         input = get_player_command("What character would you like to play?")
         player = input.title()
-        # prevent input error if the user does not input The Flash
+        # prevent input error if the user does not input The Thief
         if player == "Thief":
             player = "Thief"
         # print the choosen character with characteristics and inventory

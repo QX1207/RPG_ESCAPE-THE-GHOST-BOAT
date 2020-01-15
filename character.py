@@ -42,20 +42,20 @@ class Soldier(Character):
 Doctor = Doctor()
 Thief = Thief()
 Soldier = Soldier()
-heroes = [Doctor.name, Thief.name, Soldier.name]
+characters = [Doctor.name, Thief.name, Soldier.name]
 
 
-def characterer_check(Character):
+def character_check(character):
     """Checks which character was chosen and prints out the characteristics"""
-    if characterer == "Doctor":
+    if character == "Doctor":
         character_characteristics(Doctor)
-    elif characterer == "Thief":
-        hero_characteristics(Thief)
+    elif character == "Thief":
+        character_characteristics(Thief)
     else:
-        hero_characteristics(Soldier)
+        character_characteristics(Soldier)
 
 
-def character_characteristics(Character):
+def character_characteristics(character):
     """Prints out the hero's characteristics"""
     print(f"{character.name}'s true identy is {character.identity}")
     print(f"{character.name}'s super power is {character.power}")

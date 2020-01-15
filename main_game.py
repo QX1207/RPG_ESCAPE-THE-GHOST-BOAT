@@ -165,7 +165,7 @@ def choose_people():
         # prevent input error if the user does not input The Thief
         if player == "Thief":
             player = "Thief"
-        # print the choosen character with characteristics and inventory
+        # print the choosen character with characteristics and weapon
         if player in character.characters:
             print(f"Welcome, {player}!")
             character.character_check(player)

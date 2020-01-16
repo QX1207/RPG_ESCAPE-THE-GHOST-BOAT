@@ -1,5 +1,3 @@
-# just import random to give a random weapon at the beginning of the game
-import random
 # a dictionary of weapon in the game
 weapon = {"Common Weapon": {'Wood Sword':
                            {'description': "",
@@ -60,9 +58,8 @@ weapon = {"Common Weapon": {'Wood Sword':
                         "Mechanical Umbrella - Thousands of Organ":
                         {'description': "",
                          'damage': 0,
-                         'protection': 0},
-                        },
-        "epicWeapon": {"Star Wand - Final Justice":
+                         'protection': 0}},
+        "Epic Weapon": {"Star Wand - Final Justice":
                        {'description': "",
                         'damage': 0,
                         'protection': 0},
@@ -73,20 +70,20 @@ weapon = {"Common Weapon": {'Wood Sword':
                        "Unknown Sword - Broken Sword from the Stone":
                        {'description': "",
                         'damage': 0,
-                        'protection': 0},
-        "Legendar yWeapon": {"Chaos Mirror":
+                        'protection': 0}},
+        "Legendary Weapon": {"Chaos Mirror":
                              {'description': "",
                               'damage': 0,
-                              'protection': 0}
+                              'protection': 0}}
         }
 
 
-def player_weapon(player, weapon):
-    """Print out the inventory for the choosen character"""
-    for item in weapon[player]:
-        description = inventory[player][item]["description"]
-        damage = inventory[player][item]["damage"]
-        protection = inventory[player][item]["protection"]
-        print(f"{player}'s {item} - {description}")
+def level_weapon(level, weapon):
+    """Print out the weapon for the choosen character"""
+    for item in weapon[level]:
+        description = weapon[level][item]["description"]
+        damage = weapon[level][item]["damage"]
+        protection = weapon[level][item]["protection"]
+        print(f"{level}'s {item} - {description}")
         print(f"damage: {damage}")
         print(f"protection: {protection}")

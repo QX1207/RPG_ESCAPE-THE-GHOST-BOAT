@@ -64,50 +64,6 @@ for characters, characters_info in characters.items():
 print("\n")
 
 
-# create a nested dictionary (a dictionary in a dictionary) for the inventories
-weaponInventory = {
-    'Wood Sword': {
-                  'bonusAttackDamage': '25',
-                  'description': 'A common sword made by wood',
-                  'attackRanges': '5m',
-                  'attackSpeed': '15%'
-    },
-    'Stone Sword': {
-                   'bonusAttackDamage': '40',
-                   'description': 'A common sword made by stone',
-                   'attackRanges': '5m',
-                   'attackSpeed': '10%'
-    },
-    'Stone Knife': {
-                   'bonusAttackDamage': '30',
-                   'description': 'A common knife made by stone',
-                   'attackRanges': '60',
-                   'attackSpeed': '10%'
-    }
-}
-
-
-# print out the name of this inventory
-print(f"\nInventory(common weapon):")
-
-
-# use for-loop to print out my statement about inventories line by line
-for weaponInventory, weaponInventory_info in weaponInventory.items():
-    print(f"\n*{weaponInventory}")
-    bonusAttackDamage = weaponInventory_info['bonusAttackDamage']
-    description = weaponInventory_info["description"]
-    attackRanges = weaponInventory_info["attackRanges"]
-    attackSpeed = weaponInventory_info["attackSpeed"]
-    print(f"\tBonus Attack Damage: {bonusAttackDamage}")
-    print(f"\tDescription: {description}")
-    print(f"\tAttack Range: {attackRanges}")
-    print(f"\tAttack Speed: {attackSpeed}")
-
-
-# print two empty line that make it easy to read
-print("\n")
-
-
 def play():
     """Print an action menu and allow for continous game play"""
     # print title of game
@@ -129,7 +85,7 @@ def play():
             # after the character is choosen, player chooses the map to play
             elif action_input == "characters":
                 choose_people()
-                choose_weapon()
+                choose_map()
                 add_action(action)
             elif action_input == "move":
                 # directions menu and options appear when move is choosen
@@ -169,12 +125,17 @@ def choose_people():
         if player in character.characters:
             print(f"Welcome, {player}!")
             character.character_check(player)
-            weapon.player_weapon(player, weapon.weapon)
+            weapon.level_weapon("Common Weapon", weapon.weapon)
             print("\n")
             break
         else:
             print("Invalid Character")
             print("\n")
+
+
+def choose_map():
+
+
 
 def add_action(list):
     """Unlock actions after characters and map is chosen"""
@@ -182,8 +143,6 @@ def add_action(list):
                      'use your ability']
     list.remove("map")
     list.remove("characters")
-    for action in unlock_action:
-        list.append(action)
     print_actions(list)
     print("\n")
 

@@ -78,6 +78,10 @@ weapon = {"Common Weapon": {'Wood Sword':
         }
 
 
+def level(level):
+
+
+
 def level_weapon(level, weapon):
     """Print out the weapon for the choosen character"""
     for item in weapon[level]:

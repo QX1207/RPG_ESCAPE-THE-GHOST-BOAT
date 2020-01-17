@@ -75,7 +75,7 @@ class ViewMapTile(MapCoordinates):
         print_map = """
                                 North
     |Officer's Quarters|Navgation   |First Mate's Quarters|Captain's Quarters|
-    | Escape Pod       |Long Boat   |      Main-Mast      |       Wheel      |
+    | Escape Boat      |Long Boat   |      Main-Mast      |       Wheel      |
     | Fore Hold        |Cargo Access|     Capstan         |  Officer's Mess  |
     | Live stock Hold  |Infirmary   |     Cable Stores    | Carpenter Stores |
                                 South
@@ -83,16 +83,17 @@ class ViewMapTile(MapCoordinates):
     print(print_map)
 
 
-class EscapeRoom(MapCoordinates):
-    """Position that contains the Escape Room"""
+class EscapeBoat(MapCoordinates):
+    """Position that contains the Escape Boat"""
     def modify_player(self, player):
-        """Player wins the game if they reach the Escape Room"""
+        """Player wins the game if they reach the Escape Boat"""
         player.victory = True
         sys.exit()
 
     def intro_text(self):
         return """
-        You found the EscapeRoom! You can leave the ghost ship SV Mary Celeste.
+        You found the Escape Boat! You can leave the ghost ship SV Mary
+        Celeste.
         """
 
 
@@ -183,9 +184,9 @@ def is_dsl_valid(dsl):
     Check to make sure there is only one start tile and escape pod.
     Also check that each row has the same number of columns
     """
-    if dsl.count("|AS|") != 1:
+    if dsl.count("|A0|") != 1:
         return False
-    if dsl.count("|BE|") == 0:
+    if dsl.count("|B0|") == 0:
         return False
     lines = dsl.splitlines()
     lines = [l for l in lines if l]
@@ -197,7 +198,7 @@ def is_dsl_valid(dsl):
 
 
 # key to the ship's map
-tile_type_dict = {"B0": EscapeRoom,
+tile_type_dict = {"B0": EscapeBoat,
                   "A3": StartTile,
                   "A1": Monster,
                   "A2": Monster,
@@ -216,37 +217,5 @@ tile_type_dict = {"B0": EscapeRoom,
 # initialize the start tile
 start_tile_location = None
 
-
-def parse_ship_dsl():
-    """Taking the ship map as a string and returning a list"""
-    if not is_dsl_valid(ship_dsl):
-        raise SyntaxError("DSL is invalid!")
-
-    dsl_lines = ship_dsl.splitlines()
-    dsl_lines = [x for x in dsl_lines if x]
-    # Iterate over each line in the DSL.
-    for y, dsl_row in enumerate(dsl_lines):
-        # Create an object to store the tiles
-        row = []
-        # Split the line into abbreviations
-        dsl_cells = dsl_row.split("|")
-        # The split method includes the beginning
-        # and end of the line so we need to remove
-        # those nonexistent cells
-        dsl_cells = [c for c in dsl_cells if c]
-        # Iterate over each cell in the DSL line
-        for x, dsl_cells in enumerate(dsl_cells):
-            # Look up the abbreviation in the dictionary
-            tile_type = tile_type_dict[dsl_cells]
-            # set the start tile location
-            if tile_type == StartTile:
-                global start_tile_location
-                start_tile_location = x, y
-            # If the dictionary returned a valid type, create
-            # a new tile object, pass it the X-Y coordinates
-            # as required by the tile __init__(), and add
-            # it to the row object. If None was found in the
-            # dictionary, we just add None.
-            row.append(tile_type(x, y) if tile_type else None)
-        # Add the whole row to the ship_map
-        ship_map.append(row)
+# game place
+places = {"Ghost Ship": "SV Mary Celeste"}

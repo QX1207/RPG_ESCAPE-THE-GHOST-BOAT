@@ -85,7 +85,7 @@ def play():
             # after the character is choosen, player chooses the map to play
             elif action_input == "characters":
                 choose_people()
-                choose_map()
+                getinto_map()
                 add_action(action)
             elif action_input == "move":
                 # directions menu and options appear when move is choosen
@@ -133,8 +133,13 @@ def choose_people():
             print("\n")
 
 
-def choose_map():
-
+def getinto_map():
+    """The player chooses which city they would like to play"""
+    print("Ship")
+    print("\n")
+    print(f"Welcome to SV Mary Celeste!")
+    place_map = map.main_map
+    print(tabulate(place_map, tablefmt="grid"))
 
 
 def add_action(list):

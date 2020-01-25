@@ -9,7 +9,7 @@ import sys
 import character
 import map
 from tabulate import tabulate
-import weapon
+import inventory
 # create a nested dictionary (a dictionary in a dictionary) for the characters
 # number of character is use to count the # of character we have and help us
 # to create other code easier

@@ -1,4 +1,4 @@
-import weapon
+import inventory
 import map
 import random
 
